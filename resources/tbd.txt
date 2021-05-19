@@ -1,0 +1,6 @@
+alternating page wide table
+merge tables fix row overwrite
+long tables (xtabular) auto width
+captions for all table types command fix
+two line section titles
+end section symbol
