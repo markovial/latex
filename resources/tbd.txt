@@ -1,6 +1,14 @@
-alternating page wide table
-merge tables fix row overwrite
-long tables (xtabular) auto width
-captions for all table types command fix
-two line section titles
-end section symbol
+SECTIONS
+
+ - two line section titles
+
+TABLES :
+ - replace tabularx with tabular*
+ - long tables that split by column : research xtable
+ - alternating lines page wide table
+ - long tables auto width
+ - captions for all table types command fix
+
+
+ - merge tables fix row overwrite            : DONE
+ - matrices to appear either cutoff or white : DONE

@@ -1,6 +1,5 @@
 % =============================================================================
 \input{resources/preamble.tex}
-
 % ============================================================================ 
 \begin{document}
 \input{resources/title.tex}
@@ -34,9 +33,9 @@ This is a ref to go to the figure in the images section \reffig{placeholder}
 
 \vspace{0.5cm}
 
-% 	SUB-SECTION : section_refrences {{{
-\subsection{Section Refrences}
-\label{ssec:section_refrences}
+% 	SUB-SECTION : section_references {{{
+\subsection{Section References}
+\label{ssec:section_references}
 
 Section \refsec{tcolorboxes}
 
@@ -46,7 +45,7 @@ Sub-sub-section \refsssec{footnotes}
 
 
 \subsectionend
-% }}} END SUB-SECTION : section_refrences
+% }}} END SUB-SECTION : section_references
 
 \vspace{0.5cm}
 
@@ -124,6 +123,14 @@ i got too tired to read the man file , but you can do it im sure
 % }}} END SUB-SUB-SECTION : citations
 
 
+% 		SUB-SUB-SECTION : reference_without_inline_citation {{{
+\subsubsection{Reference without inline citation}
+\label{sssec:reference_without_inline_citation}
+
+\nocite{lipsum}
+
+\subsubsectionend
+% }}} END SUB-SUB-SECTION : reference_without_inline_citation
 \sectionend
 % }}} END SECTION : sections_and_refrences
 
@@ -334,78 +341,39 @@ The first computer was invented in the 1940s.
 
 	% }}} End PAGE-WIDE TABLE : new table
 
-	% TABULARX TABLE : generic_table {{{
-	
-	\alternatingtabularxtable
-	{0.99\linewidth}
-	{llX}
-	{
+% generic table {{{
+
+%\begin{tabular*}{|c|c|c|}
+\begin{tabular*}{\columnwidth}{@{\extracolsep{\fill}}|c|c|c|@{}}
+
 		cell & cell & this is the full length of a cell in \\
 		cell & cell & this is the full length of a cell in \\
 		cell & cell & this is the full length of a cell in \\
 		cell & cell & this is the full length of a cell in \\
-	
-	}
-	
-	% }}} End TABLE : generic_table
+
+\end{tabular*}
+% }}}
 
 	\lipsum[1-3]
 
-	% XTABULAR TABLE : long_table {{{
-
-	\alternatingxtabulartable
-	{lll}
-	{
-
-	 X & X & X \\
-	 X & X & X \\
-	 X & X & X \\
-	 X & X & X \\
-	 X & X & X \\
-	 X & X & X \\
-	 X & X & X \\
-	 X & X & X \\
-	 X & X & X \\
-	 X & X & X \\
-	 X & X & X \\
-	 X & X & X \\
-	 X & X & X \\
-	 X & X & X \\
-	 X & X & X \\
-	 X & X & X \\
-	 X & X & X \\
-	 X & X & X \\
-	 X & X & X \\
-	 X & X & X \\
-	 X & X & X \\
-	 X & X & X \\
-	}
-
-
-	% }}} End XTABULAR TABLE : long table
-
+	% column splitting table here
 	\lipsum[1-4]
 
 	\lipsum
 
-	% TABULARX TABLE : _merged_table {{{
+% merged table {{{
 
-	\tabularxtable
-	{0.99\linewidth}
-	{lllX}
-	{
+%\begin{tabular}{llll}
 
+\begin{tabular*}{\columnwidth}{@{\extracolsep{\fill}}llll@{}}
 	\hline
-	\multicolumn{2}{c}{Col Merge}     & cell                         & cell \\ \midrule
-	\multirow{3}{*}{ Row Merge }&
-	cell & cell & cell \\ \cline{2-4}
-		 &      & cell                & cell \\ \cline{3-4}
-		 &      & cell                & cell \\ \midrule
+	\multicolumn{2}{c}{Col Merge}  & cell                         & cell \\ \midrule
+	\multirow{3}{*}{ Row Merge }   & cell                         & cell             & cell \\ \cline{2-4}
+		                           & \multirow{2}{*}{ Row Merge } & cell             & cell \\ \cline{3-4}
+		                           &                              & cell             & cell \\ \midrule
 
-	}
-
-	% }}} End TABLE : Merged Table
-
+\end{tabular*}
+% }}}
 
 \sectionend
 % }}} END SECTION : tables

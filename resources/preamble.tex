@@ -8,7 +8,7 @@
 \usepackage[english]{babel}
 
 \title{This is title for this document}
-\author{John Doe}
+\author{John Doestar}
 \date{\today}
 
 % }}}
@@ -290,28 +290,24 @@ urlcolor   = black
 % }}}
 
 % }}}
-% TABLES & IMAGES -------------------------------------------------------- {{{
+% TABLES ----------------------------------------------------------------- {{{
 
-\usepackage{booktabs}    %
+\usepackage{booktabs}    % nicer line drawing with toprule,midrule,hrule
 \usepackage{multicol}    % allows column merging in tables
 \usepackage{multirow}    % allows row merging in tables
-\usepackage{tabularx}    % allow tables to stretch to page length
+
+% was causing issues where equations , matrices , merged cells etc... , were
+% appearing white / not displaying / overwriting each other
+%\usepackage{tabularx}    % allow tables to stretch to page length
+
 \usepackage{xtab}        % allows page breaking tables inline
 \usepackage{makecell}    % allows linebreaking within cells of tables
 
 % longtables tend to break in two column mode
 %\usepackage{longtable}  % allows tables to span pages
 %\usepackage{ltablex}    % combination of longtable and tabularx
-\usepackage{wrapfig, graphicx}
-%\usepackage{graphicx}   %
-\usepackage{subcaption} %
-%\usepackage{wrapfig}    % wrap images around text
-\usepackage{capt-of}    % define captions independent of figures
-\usepackage{float}
-\usepackage{varwidth}
-\graphicspath{{images/}} % define folder path for images
 
-% TCOLORBOX -------------------------------------------------------------- {{{
+	% TCOLORBOX ---------------------------------------------------------- {{{
 
 \usepackage[skins,breakable]{tcolorbox}
 % skins allows use of enhanced options
@@ -721,6 +717,18 @@ urlcolor   = black
 % }}}
 
 % }}}
+
+% }}}
+% IMAGES ----------------------------------------------------------------- {{{
+
+\usepackage{wrapfig, graphicx}
+%\usepackage{graphicx}   %
+\usepackage{subcaption} %
+%\usepackage{wrapfig}    % wrap images around text
+\usepackage{capt-of}    % define captions independent of figures
+\usepackage{float}
+\usepackage{varwidth}
+\graphicspath{{images/}} % define folder path for images
 
 % }}}
 % CODE / CODE DISPLAY ---------------------------------------------------- {{{
