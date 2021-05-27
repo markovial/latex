@@ -1,0 +1,52 @@
+% SECTION : images_&_figures {{{
+\section{Images \& Figures}
+\label{sec:images_&_figures}
+\parindent=0em
+
+\lipsum[1]
+
+% image {{{
+
+\begin{figure}[h!]
+  \includegraphics[width=\linewidth]{placeholder.jpg}
+  \caption{This is a placeholder image.}
+  \label{fig:placeholder}
+\end{figure}
+
+% }}}
+
+\lipsum[1]
+
+% page wide figure {{{
+
+\begin{figure*}[ht]
+\centering
+\includegraphics[width=0.9\textwidth]{placeholder.jpg}
+\caption{Wide single column figure in a twocolumn document.}
+\end{figure*}
+
+% }}}
+
+\lipsum
+
+% multiple images {{{
+
+\begin{figure}[h!]
+  \centering
+  \begin{subfigure}[b]{0.4\linewidth}
+    \includegraphics[width=\linewidth]{placeholder.jpg}
+    \caption{one image.}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.4\linewidth}
+    \includegraphics[width=\linewidth]{placeholder.jpg}
+    \caption{two image.}
+  \end{subfigure}
+  \caption{Overall image caption}
+%  \label{fig:}
+\end{figure}
+
+% }}}
+
+\sectionend
+% }}} END SECTION : images_&_figures
+

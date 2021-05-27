@@ -728,7 +728,7 @@ urlcolor   = black
 \usepackage{capt-of}    % define captions independent of figures
 \usepackage{float}
 \usepackage{varwidth}
-\graphicspath{{images/}} % define folder path for images
+\graphicspath{{2_images/}} % define folder path for images
 
 % }}}
 % CODE / CODE DISPLAY ---------------------------------------------------- {{{
@@ -1025,6 +1025,22 @@ framexrightmargin=0pt    % margin for the right background border
 % }}}
 
 % New Commands : Tables {{{
+
+\newcommand{ \tabulartable }[2]
+{ 
+	\nolinenumbers
+
+	\begin{tabular*}{\columnwidth}{@{\extracolsep{\fill}} #1 @{}}
+
+		#2
+
+	\end{tabular*}
+
+	\linenumbers
+}
+
+
+
 
 \newcommand{ \alternatingtabularxtable}[3]
 {
