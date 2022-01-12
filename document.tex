@@ -1,17 +1,106 @@
 % =============================================================================
-\input{0_includes/preamble.tex}
+\input{0_includes/0_preamble.tex}
 % ============================================================================ 
 \begin{document}
-\input{3_content/0_title_page.tex}
-\input{3_content/1_contents_page.tex}
+%\input{0_includes/1_title_page.tex}
+%\input{0_includes/2_contents_page.tex}
 
-\input{3_content/sections_and_references.tex}
-\input{3_content/tcolorboxes.tex}
-\input{3_content/code.tex}
+%\input{3_content/sections_and_references.tex}\clearpage
+%\input{3_content/tcolorboxes.tex}            \clearpage
+%\input{3_content/code.tex}                   \clearpage
+%\input{3_content/images_and_figures.tex}     \clearpage
 
-\input{3_content/images_and_figures.tex}
-\input{3_content/tables.tex}
-\input{3_content/tikz.tex}
+%\input{3_content/tikz.tex}                   \clearpage
+%\input{3_content/japanese.tex}                \clearpage
+%\input{3_content/korean.tex}                  \clearpage
+
+%\input{3_content/tables.tex}                 \clearpage
+
+% SECTION : tables {{{
+\section{Tables}
+\label{sec:tables}
+\parindent=0em
+
+	% PAGE-WIDE TABLE : new_table {{{
+
+		\pagewidetable
+		{caption}
+		{ 
+			p{0.25\linewidth}
+			m{0.25\linewidth}
+			b{0.25\linewidth} 
+		}
+		{
+			\hline
+			X & X & X\\
+			X & X & X\\
+			X & X & X\\
+
+		}
+
+	% }}} End PAGE-WIDE TABLE : new table
+
+% TABULAR TABLE : generic_auto_width_table {{{
+
+\tabulartable
+{ |r|r|r| }
+{ 
+		cell2 & cell & cell \\
+		cell2 & cell & cell \\
+		cell2 & cell & cell \\
+}
+
+% }}} End TABULAR TABLE : generic auto width table
+
+% TABULAR TABLE : generic_auto_width_table_2 {{{
+
+\tabulartable
+{ |c|c|c|}
+{
+		cell & cell & this is the full length of a cell in \\
+		cell & cell & this is the full length of a cell in \\
+		cell & cell & this is the full length of a cell in \\
+		cell & cell & this is the full length of a cell in \\
+}
+
+% }}} End TABULAR TABLE : Generic auto width table 2
+
+% TABULAR TABLE : auto_with_table_with_merged_cells {{{
+
+\tabulartable
+{ llll }
+{
+	\hline
+	\multicolumn{2}{c}{Col Merge}  & cell                         & cell \\ \midrule
+	\multirow{3}{*}{ Row Merge }   & cell                         & cell             & cell \\ \cline{2-4}
+								   & \multirow{2}{*}{ Row Merge } & cell             & cell \\ \cline{3-4}
+								   &                              & cell             & cell \\ \midrule
+}
+
+% }}} End TABULAR TABLE : Auto With table with merged cells
+
+% TABULAR TABLE : generic_auto_width_table_2 {{{
+
+\alternatingtabulartable
+{ |c|c|c|}
+{
+		cell & cell & this is the full length of a cell in \\
+		cell & cell & this is the full length of a cell in \\
+		cell & cell & this is the full length of a cell in \\
+		cell & cell & this is the full length of a cell in \\
+}
+
+% }}} End TABULAR TABLE : Generic auto width table 2
+	\lipsum[1-4]
+
+	% column splitting table here
+
+	\lipsum[1-8]
+
+\sectionend
+% }}} END SECTION : tables
+
+
 
 % ----------------------------------------------------------------------------- 
 \bibliography{1_bibliography/references}
