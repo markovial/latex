@@ -1,6 +1,6 @@
 SECTIONS
 
- - two line section titles
+ - two line section titles / boxes
 
 TABLES :
  - replace tabularx with tabular*
@@ -12,3 +12,8 @@ TABLES :
 
  - merge tables fix row overwrite            : DONE
  - matrices to appear either cutoff or white : DONE
+
+ LANGUAGES
+
+ - korean titles don't work when included in seperate .tex file, but work when
+   part of document.tex , hmm....

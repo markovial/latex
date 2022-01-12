@@ -2,8 +2,6 @@
 # original : https://scaron.info/blog/makefiles-for-latex.html
 
 DOCUMENT=document.tex  # set the path to your TeX file here
-#SHELL=/bin/bash   # for the while loop below
-
 
 all:
 	pdflatex $(DOCUMENT)

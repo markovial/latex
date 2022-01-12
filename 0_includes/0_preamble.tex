@@ -1,4 +1,3 @@
-
 % DOCUMENT CLASS , ENCODING , TITLE -------------------------------------- {{{
 
 \documentclass[a4paper,twocolumn,10pt]{article}
@@ -15,7 +14,7 @@
 % FONTS ------------------------------------------------------------------ {{{
 
 \usepackage{courier}     % courier font
-\usepackage{fontawesome} % font awesome glyphs
+%\usepackage{fontawesome} % font awesome glyphs
 \usepackage{setspace}    % inter line spacing
 \singlespacing           % set spacing to single spaced
 
@@ -39,8 +38,9 @@
 	bottom=20mm
 }
 
-\usepackage[switch,displaymath,mathlines]{lineno}
-%\usepackage[displaymath,mathlines]{lineno}
+
+\usepackage[switch]{lineno} % switch allows line numbers on alternating sides
+%\usepackage[switch,displaymath,mathlines]{lineno}
 %\modulolinenumbers[5]
 \linenumberfont{\normalfont\large\sffamily}
 \renewcommand{\thelinenumber}{\color{gray}\arabic{linenumber}}
@@ -81,7 +81,7 @@ shrink=10]{microtype}
 \setlength\parindent{0em} % Indent Spacing 
 
 % }}}
-% TITLE FORMAT  ---------------------------------------------------------- {{{
+% TITLE FORMAT (TITLESEC) ------------------------------------------------ {{{
 
 \usepackage[export]{adjustbox}
 \usepackage{changepage}
@@ -96,14 +96,14 @@ shrink=10]{microtype}
 % Section Title Settings {{{
 \titleformat {\section}
 	[hang]
-	{\color{black}\Large\bfseries}
+	{\Large\bfseries}
 	{}
 	{0em}
 	{
 	\nolinenumbers
 	\vspace{-0.5cm}
 	\begin{section-box}
-	\thesection. #1
+		\color{white} \thesection. #1
 	\end{section-box}
 	}
 [
@@ -117,7 +117,7 @@ shrink=10]{microtype}
 % Sub-Section Title Settings {{{
 \titleformat {\subsection}
 	[hang]
-	{\color{black}\small\bfseries}
+	{\small\bfseries}
 	{}
 	{0em}
 	{
@@ -126,7 +126,7 @@ shrink=10]{microtype}
 	\begin{subsection-box} 
 	\begin{subsection-box-2} \end{subsection-box-2} 
 	\vspace{-0.5cm} \hspace{0.35cm}
-		\thesubsection. #1
+		\color{black} \thesubsection. #1
 	\end{subsection-box}
 	}
 [
@@ -141,7 +141,7 @@ shrink=10]{microtype}
 % Sub-Sub-Section Title Settings {{{
 \titleformat {\subsubsection}
 	[hang]
-	{\color{black}\small\bfseries}
+	{\small\bfseries}
 	{}
 	{0em}
 	{
@@ -153,7 +153,7 @@ shrink=10]{microtype}
 	\end{subsubsection-box-3} 
 	\end{subsubsection-box-2}
 	\vspace{-0.4cm} \hspace{0.8cm} 
-		\thesubsubsection. #1
+		\color{black} \thesubsubsection. #1
 	\end{subsubsection-box}
 	}
 [
@@ -307,7 +307,9 @@ urlcolor   = black
 %\usepackage{longtable}  % allows tables to span pages
 %\usepackage{ltablex}    % combination of longtable and tabularx
 
-	% TCOLORBOX ---------------------------------------------------------- {{{
+
+% }}}
+% TCOLORBOX -------------------------------------------------------------- {{{
 
 \usepackage[skins,breakable]{tcolorbox}
 % skins allows use of enhanced options
@@ -717,8 +719,6 @@ urlcolor   = black
 % }}}
 
 % }}}
-
-% }}}
 % IMAGES ----------------------------------------------------------------- {{{
 
 \usepackage{wrapfig, graphicx}
@@ -776,16 +776,25 @@ framexrightmargin=0pt    % margin for the right background border
 \newtheorem{myfigure}{FIGURE}[section]  % to get auto numbering
 \newtheorem{mytable}{TABLE}[section]    % to get auto numbering
 
+% tex.stackexchange.com/questions/461186/how-to-use-lineno-with-amsmath-align
+% amsmath should come after lineno for auto math line numbering
+% linenumbers for amsmath (lineno+ams) ,
+% honestly i can live without it ... , it creates more problems than its worth
+
 % TIKZ -------------------------------------------------------------------- {{{
 \usepackage{tikz}
 %\documentclass[tikz, border=1mm]{standalone} % only tikz image document
-
-\usepackage{pgfplots}
-\usepackage{array}
-
 \usetikzlibrary{shapes.geometric}
 \usetikzlibrary{shapes.arrows}
 \usetikzlibrary{positioning}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{decorations.pathreplacing,angles,quotes}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{fillbetween}
+\usepackage{array}
+
 
 % }}}
 
@@ -1026,10 +1035,26 @@ framexrightmargin=0pt    % margin for the right background border
 
 % New Commands : Tables {{{
 
-\newcommand{ \tabulartable }[2]
-{ 
+
+
+\newcommand{ \tabulartable }[3]
+{
 	\nolinenumbers
 
+	\begin{tabular*}{#1}{@{\extracolsep{\fill}} #2 @{}}
+
+		#3
+
+	\end{tabular*}
+
+	\linenumbers
+}
+
+\newcommand{ \alternatingtabulartable }[2]
+{
+	\nolinenumbers
+
+	\rowcolors{2}{table-alternating-1}{table-alternating-2}
 	\begin{tabular*}{\columnwidth}{@{\extracolsep{\fill}} #1 @{}}
 
 		#2
@@ -1038,9 +1063,6 @@ framexrightmargin=0pt    % margin for the right background border
 
 	\linenumbers
 }
-
-
-
 
 \newcommand{ \alternatingtabularxtable}[3]
 {
@@ -1186,4 +1208,26 @@ framexrightmargin=0pt    % margin for the right background border
 
 
 % }}}
+% JAPANESE --------------------------------------------------------------- {{{
 
+\usepackage[whole]{bxcjkjatype} % Allows Japanese Characters , CJK incompatible with pdflatex
+\usepackage{ruby}               % used for kanji furigana placement
+                                % \ruby{学}{がく}
+
+\renewcommand\rubysep{0ex}      % Kanji and furigana placement location
+\let\temp\ruby                  %
+\renewcommand\ruby[2]{          % Kanji and furigana size / spacing / color
+	\temp
+	{\fontsize{10}{10}#1 }
+	{\fontsize{6}{6}\textcolor{gray}{#2}}
+}
+% }}}
+% KOREAN {{{
+\usepackage{CJKutf8}
+
+% text has to inside block :
+%\begin{CJK}{UTF8}{}
+%\end{CJK}
+
+
+% }}}
