@@ -42,32 +42,41 @@
 
 % TABULAR TABLE : generic_auto_width_table {{{
 
+
 \tabulartable
+{ \columnwidth }
+{ t }
 { |r|r|r| }
-{ 
-		cell2 & cell & cell \\
+{
+		cell2 & \cellcolor{pink} cell & cell \\
 		cell2 & cell & cell \\
 		cell2 & cell & cell \\
 }
+
 
 % }}} End TABULAR TABLE : generic auto width table
 
 % TABULAR TABLE : generic_auto_width_table_2 {{{
 
 \tabulartable
-{ |c|c|c|}
+{ \columnwidth }
+{ t }
+{ |c|c|c| }
 {
-		cell & cell & this is the full length of a cell in \\
-		cell & cell & this is the full length of a cell in \\
-		cell & cell & this is the full length of a cell in \\
-		cell & cell & this is the full length of a cell in \\
+	cell & cell & this is the full length of a cell in \\
+	cell & cell & this is the full length of a cell in \\
+	cell & cell & this is the full length of a cell in \\
+	cell & cell & this is the full length of a cell in \\
 }
+
 
 % }}} End TABULAR TABLE : Generic auto width table 2
 
 % TABULAR TABLE : auto_with_table_with_merged_cells {{{
 
 \tabulartable
+{ \columnwidth }
+{  }
 { llll }
 {
 	\hline
@@ -76,6 +85,14 @@
 								   & \multirow{2}{*}{ Row Merge } & cell             & cell \\ \cline{3-4}
 								   &                              & cell             & cell \\ \midrule
 }
+
+
+
+
+%\tabulartable
+%{ llll }
+%{
+%}
 
 % }}} End TABULAR TABLE : Auto With table with merged cells
 
