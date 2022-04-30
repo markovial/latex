@@ -4,6 +4,7 @@ SECTIONS
 
 TABLES :
  - replace tabularx with tabular*
+ - tabular* colors with cellcolor only the text in the cell instead of the whole cell
  - long tables that split by column : research xtable
  - alternating lines page wide table
  - long tables auto width

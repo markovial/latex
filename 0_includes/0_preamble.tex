@@ -295,6 +295,8 @@ urlcolor   = black
 \usepackage{booktabs}    % nicer line drawing with toprule,midrule,hrule
 \usepackage{multicol}    % allows column merging in tables
 \usepackage{multirow}    % allows row merging in tables
+\usepackage{diagbox}     % allows diagonal / angled splitting in table cells
+\usepackage{slashbox}    % allows drawing angled slashed in table cells
 
 % was causing issues where equations , matrices , merged cells etc... , were
 % appearing white / not displaying / overwriting each other
@@ -771,6 +773,7 @@ framexrightmargin=0pt    % margin for the right background border
 \usepackage{amssymb}  % allows more math symbols
 \usepackage{amsthm}   % allows custom therorem,defn,corll etc... definitions
 \usepackage{mathrsfs} % some new fonts for math mode
+\usepackage{cancel}   % allows me to cancel , and cancelto text 
 
 \newtheorem{mydef}{DEFINITION}[section] % to get auto numbering
 \newtheorem{myfigure}{FIGURE}[section]  % to get auto numbering
@@ -780,6 +783,9 @@ framexrightmargin=0pt    % margin for the right background border
 % amsmath should come after lineno for auto math line numbering
 % linenumbers for amsmath (lineno+ams) ,
 % honestly i can live without it ... , it creates more problems than its worth
+
+
+
 
 % TIKZ -------------------------------------------------------------------- {{{
 \usepackage{tikz}
@@ -846,12 +852,13 @@ framexrightmargin=0pt    % margin for the right background border
 \newcommand{ \sectionend}
 {
 \nolinenumbers
-
 \begin{center} 
 {\large \textbf{-§-}  }
 \end{center} 
 
-\justify
+% was causing problems , i havent figured out the cause
+%\justify
+
 \linenumbers
 \pagebreak
 }
@@ -1037,13 +1044,15 @@ framexrightmargin=0pt    % margin for the right background border
 
 
 
-\newcommand{ \tabulartable }[3]
+\newcommand{ \tabulartable }[4]
 {
 	\nolinenumbers
 
-	\begin{tabular*}{#1}{@{\extracolsep{\fill}} #2 @{}}
+	% emerson.emory.edu/services/latex/latex_69.html
+	% \begin{tabular*}{width}[pos]{cols}
+	\begin{tabular*}{#1}[#2]{@{\extracolsep{\fill}} #3 @{}}
 
-		#3
+		#4
 
 	\end{tabular*}
 
