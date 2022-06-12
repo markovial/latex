@@ -1241,18 +1241,23 @@ framexrightmargin=0pt    % margin for the right background border
 
 % }}}
 
-\makeatletter
-% \overarrow@ and \arrowfill@ are defined in amsmath
-\newcommand*{\harpoon}{\mathpalette{\overarrow@\rightharpoonupfill@}}
-\newcommand*{\rightharpoonupfill@}{\arrowfill@\relbar\relbar\rightharpoonup}
-\makeatother
 
-\DeclareFontFamily{U}{matha}{\hyphenchar\font45}
-\DeclareFontShape{U}{matha}{m}{n}{
-      <5> <6> <7> <8> <9> <10> gen * matha
-      <10.95> matha10 <12> <14.4> <17.28> <20.74> <24.88> matha12
-      }{}
-\DeclareSymbolFont{matha}{U}{matha}{m}{n}
-\DeclareMathSymbol{\varrightharpoonup}{3}{matha}{"E1}
+% harpoon symbol  {{{
+
+%\makeatletter
+%% \overarrow@ and \arrowfill@ are defined in amsmath
+%\newcommand*{\harpoon}{\mathpalette{\overarrow@\rightharpoonupfill@}}
+%\newcommand*{\rightharpoonupfill@}{\arrowfill@\relbar\relbar\rightharpoonup}
+%\makeatother
+
+%\DeclareFontFamily{U}{matha}{\hyphenchar\font45}
+%\DeclareFontShape{U}{matha}{m}{n}{
+      %<5> <6> <7> <8> <9> <10> gen * matha
+      %<10.95> matha10 <12> <14.4> <17.28> <20.74> <24.88> matha12
+      %}{}
+%\DeclareSymbolFont{matha}{U}{matha}{m}{n}
+%\DeclareMathSymbol{\varrightharpoonup}{3}{matha}{"E1}
 
 
+
+% }}}
