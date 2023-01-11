@@ -1,3 +1,7 @@
+# testing badges
+
+![Your Repository's Stats](https://github-readme-stats.vercel.app/api?username=markovial&show_icons=true)
+
 # Latex
 ---
 
