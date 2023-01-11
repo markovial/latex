@@ -1,10 +1,3 @@
-# testing badges
-
-![Your Repository's Stats](https://github-readme-stats.vercel.app/api?username=markovial&show_icons=true)
-![Your Repository's Stats](https://github-readme-stats.vercel.app/api/top-langs/?username=markovial&theme=blue-green)
-![GitHub Contributors Image](https://contrib.rocks/image?repo=markovial/latex)
-
-
 # Latex
 ---
 
