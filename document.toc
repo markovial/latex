@@ -1,0 +1,18 @@
+\babel@toc {english}{}\relax 
+\contentsline {section}{List of Tables}{1}{Doc-Start}%
+\contentsline {section}{List of Figures}{1}{Doc-Start}%
+\contentsline {section}{\numberline {1}Sections and References}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Tbox References}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Section References}{2}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Footnotes}{2}{subsubsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2}Citations}{2}{subsubsection.1.2.2}%
+\contentsline {subsubsection}{\numberline {1.2.3}Reference without inline citation}{2}{subsubsection.1.2.3}%
+\contentsline {section}{\numberline {2}Tcolorboxes}{3}{section.2}%
+\contentsline {section}{\numberline {3}Code}{4}{section.3}%
+\contentsline {section}{\numberline {4}Images \& Figures}{5}{section.4}%
+\contentsline {section}{\numberline {5}Tikz}{9}{section.5}%
+\contentsline {section}{\numberline {6}日本語}{12}{section.6}%
+\contentsline {section}{\numberline {7}Korean}{13}{section.7}%
+\contentsline {section}{\numberline {8}Tables}{14}{section.8}%
+\contentsfinish 
+\contentsline {section}{\numberline {9}References}{16}{section.9}%

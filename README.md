@@ -1,5 +1,4 @@
 # Latex
----
 
 This is basically a repository of my base latex structure for a new document.
 
@@ -14,12 +13,10 @@ out my dotfiles folder :  dotfiles/.config/nvim/UltiSnips/tex.snippets for the
 ultisnips snippets that I wrote and use.
 
 ## Required packages :
-
 ```
 pacman -S texlive-most
 pacman -S texlive-lang
 ```
-
 ## File Structure
 
 The file structure is thought out as follows :
